@@ -5,7 +5,7 @@ import queryString from "query-string";
 import GameOver from './GameOver';
 
 
-const socket = io.connect("");
+const socket = io.connect("/");
 
 
 

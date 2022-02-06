@@ -14,7 +14,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://draw-and-guess-game-react.herokuapp.com",
+    origin: "*",
     methods: ["GET", "POST"],
   },
   transports: ['websocket']

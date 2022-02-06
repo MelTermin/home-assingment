@@ -4,7 +4,7 @@ import words from "../WordList.json"
 
 import io from "socket.io-client";
 
-const socket = io.connect("");
+const socket = io.connect("/");
 
 function ChoosingWord({difficultyLevel,name}) {
   const history=useHistory();
