@@ -6,7 +6,7 @@ import queryString from "query-string";
 import io from "socket.io-client";
 
 
-const socket = io.connect("http://localhost:5002");
+const socket = io.connect("https://draw-and-guess-game-react.herokuapp.com");
 
 
 function Level({location}) {
