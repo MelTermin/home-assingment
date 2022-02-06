@@ -3,8 +3,7 @@ const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
 const path=require("path")
-const env=require('dotenv')
-env.config();
+
 
 
 const app=express();
@@ -87,6 +86,6 @@ app.get('*', (req, res) => {
 });
   
 
-app.listen(process.env.PORT || 5002,()=> {
+app.listen(5002,()=> {
   console.log(`the server is running on port` + process.env.PORT)
 })
