@@ -1,7 +1,8 @@
 const express=require('express');
 const http = require("http");
 const cors = require("cors");
-const socketio = require('socket.io');
+//const socketio = require('socket.io');
+const { Server } = require("socket.io");
 const path=require("path")
 const env=require('dotenv')
 env.config();
@@ -11,7 +12,17 @@ const app=express();
 app.use(cors());
 //creating the server
 const server = http.createServer(app);
-const io = socketio(server);
+//const io = socketio(server);
+
+
+
+const io = new Server(server, {
+  cors: {
+    origin: "http://draw-and-guess-game-react.herokuapp.com",
+    methods: ["GET", "POST"],
+    credentials: true
+  },
+});
 
 
 let players = [];

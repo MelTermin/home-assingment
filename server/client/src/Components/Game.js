@@ -5,7 +5,7 @@ import queryString from "query-string";
 import GameOver from './GameOver';
 
 
-const socket = io.connect("https://draw-and-guess-game-react.herokuapp.com/");
+const socket = io.connect("http://draw-and-guess-game-react.herokuapp.com");
 
 
 
