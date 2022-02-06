@@ -4,7 +4,7 @@ import CanvasDraw from "react-canvas-draw";
 import queryString from "query-string";
 import io from "socket.io-client";
 
-const socket = io.connect("https://draw-and-guess-game-react.herokuapp.com");
+const socket = io.connect("https://draw-and-guess-game-react.herokuapp.com/");
 
 function Drawing({location}) {
   const history=useHistory();

@@ -4,7 +4,7 @@ import words from "../WordList.json"
 
 import io from "socket.io-client";
 
-const socket = io.connect("https://draw-and-guess-game-react.herokuapp.com");
+const socket = io.connect("https://draw-and-guess-game-react.herokuapp.com/");
 
 function ChoosingWord({difficultyLevel,name}) {
   const history=useHistory();
