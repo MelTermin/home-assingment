@@ -4,7 +4,7 @@ import socket from "../Providers/SocketProvider"
 
 
 function GameEntry() {
-  console.log(socket)
+  
   const history=useHistory();
   const [username,setUserName]=useState("");
 

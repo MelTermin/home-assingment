@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {useHistory} from "react-router-dom"
 import words from "../WordList.json"
 import socket from "../Providers/SocketProvider"
@@ -7,7 +7,6 @@ import socket from "../Providers/SocketProvider"
 
 function ChoosingWord({difficultyLevel,name}) {
   const history=useHistory();
-  const [word, setWord]=useState("");
   const shuffledWords= words.sort(() => Math.random() - 0.5)
 
   const handleWord= (e) => {

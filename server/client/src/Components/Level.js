@@ -16,13 +16,11 @@ function Level({location}) {
 
 
   const handleLevelEasy= (e) => {
-  
     //taking the buttons innerText value and assing it to a state
     setDifficultyLevel(e.target.innerText)
     //setting the difficulty level on serverside
     socket.emit("mode", e.target.innerText)
-    setIsClicked(true);
-   
+    setIsClicked(true); 
   }
 
 
@@ -31,17 +29,15 @@ function Level({location}) {
      setDifficultyLevel(e.target.innerText)
      //setting the difficulty level on serverside
      socket.emit("mode", e.target.innerText)
-     setIsClicked(true);
-    
+     setIsClicked(true); 
   }
+
   const handleLevelHard= (e) => {
-  
     //taking the buttons innerText value and assing it to a state
     setDifficultyLevel(e.target.innerText)
     //setting the difficulty level on serverside
     socket.emit("mode", e.target.innerText)
     setIsClicked(true);
-   
   }
 
   return <div className='level-container'>
