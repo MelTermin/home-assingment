@@ -1,17 +1,10 @@
-
-   
 import React,{useEffect,useState} from 'react';
 import ChoosingWord from './ChoosingWord';
 import queryString from "query-string";
-import io from "socket.io-client";
-
-
-const socket = io.connect("https://draw-and-guess-game-react.herokuapp.com");
-
+import socket from "../Providers/SocketProvider"
 
 function Level({location}) {
   const [name,setName]=useState("");
-
   const [difficultyLevel, setDifficultyLevel]=useState("");
   const [isClicked, setIsClicked] = useState(false);
  

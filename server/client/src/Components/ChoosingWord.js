@@ -1,10 +1,9 @@
 import React,{useState} from 'react';
 import {useHistory} from "react-router-dom"
 import words from "../WordList.json"
+import socket from "../Providers/SocketProvider"
 
-import io from "socket.io-client";
 
-const socket = io.connect("https://draw-and-guess-game-react.herokuapp.com");
 
 function ChoosingWord({difficultyLevel,name}) {
   const history=useHistory();
@@ -12,7 +11,6 @@ function ChoosingWord({difficultyLevel,name}) {
   const shuffledWords= words.sort(() => Math.random() - 0.5)
 
   const handleWord= (e) => {
-      e.preventDefault()
       let wordText=e.target.innerText
       socket.emit("word",wordText)
       history.push(`/drawing?word=${wordText}`)    

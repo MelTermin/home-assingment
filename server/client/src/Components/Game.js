@@ -1,11 +1,9 @@
 import React,{useEffect,useState} from 'react';
-import io from "socket.io-client";
 import {useHistory} from "react-router-dom"
 import queryString from "query-string";
 import GameOver from './GameOver';
+import socket from "../Providers/SocketProvider"
 
-
-const socket = io.connect("https://draw-and-guess-game-react.herokuapp.com");
 
 
 
@@ -13,9 +11,9 @@ function Game({location}) {
 
   
   const {word:queryWord} = queryString.parse(location.search);
-  console.log(queryWord,"query")
+  //console.log(queryWord,"query")
  
-  const[image,setImage]=useState("")
+  const[image,setImage]=useState(window.image || "" )
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [word,setWord]=useState(queryWord || "" )
@@ -108,10 +106,10 @@ function Game({location}) {
                         ))}
                     </div>
                     <form className='form-wrapper'  onSubmit={submitHandler}>
-                     
-                      <input className='chatbox-input' placeholder='Please type your guesses in capital letters' autoComplete="off" type="text" value={currentMessage} onChange={(event) => {
+                     {!queryWord && (<> <input className='chatbox-input' placeholder='Please type your guesses in capital letters' autoComplete="off" type="text" value={currentMessage} onChange={(event) => {
                       setCurrentMessage(event.target.value); }}/>
-                      <button className='btn-guess' >Send</button>
+                      <button className='btn-guess' >Send</button> </>)}
+
                       <button onClick={homePage} className='btn-guess' >Go to home Page</button>
                      
                     </form>

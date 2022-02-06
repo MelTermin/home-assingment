@@ -16,14 +16,11 @@ function App() {
     <div >
       <Header />
       <Switch>
-        <Route>
           <Route exact path="/" component={GameEntry} />
           <Route exact path="/level" component={Level}/>
           <Route exact path="/drawing" component={Drawing}/>
           <Route exact path="/game" component={Game} /> 
           <Route exact path="/gameover" component={GameOver} /> 
-         
-        </Route>
       </Switch>
     
     </div>
