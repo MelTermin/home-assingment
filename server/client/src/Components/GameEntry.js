@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import {useHistory} from "react-router-dom"
 import io from "socket.io-client";
 
-const socket = io.connect("https://draw-and-guess-game-react.herokuapp.com");
+const socket = io.connect("");
 
 function GameEntry() {
   const history=useHistory();
