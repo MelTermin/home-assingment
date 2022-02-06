@@ -17,6 +17,7 @@ const io = new Server(server, {
     origin: "https://draw-and-guess-game-react.herokuapp.com",
     methods: ["GET", "POST"],
   },
+  transports: ['websocket']
 });
 
 let players = [];
